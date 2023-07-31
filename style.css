@@ -6,6 +6,18 @@ html, body {
   justify-content: center;
   align-items: center;
   background-color: rgb(19, 91, 116);
+  background-image: linear-gradient(rgba(137, 43, 226, 0.735), rgba(255, 0, 0, 0.464));
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'crimson';
+  src: url('fonts/Midnight\ crimson.ttf');
+}
+
+@font-face {
+  font-family: 'pirate one';
+  src: url('fonts/PirataOne-Regular.ttf');
 }
 
 button {
@@ -17,17 +29,11 @@ button {
   font-size: 20px;
   cursor: pointer;
   border-radius: 20px;
-  position: fixed;  
-  bottom: 10px;   
-  left: 50%;   
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
   transform: translateX(-50%);
-}
-
-.hidden {
-  display: none;
-  border: olive 2px solid;
-  border-radius: 20px;
-
+  z-index: 1; /* Ajoutez cette ligne */
 }
 
 #rulesContainer {
@@ -38,13 +44,146 @@ button {
 }
 
 #rules {
-  background: burlywood;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-family: 'pirate one';
+  font-size: 20px;
+  background-image: url(img/papyrus.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
   position: fixed;
-  bottom: 20%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   text-align: center;
-  padding: 50px;
+  padding: 10px;
+  text-shadow: 1px 1px 5px rgba(241, 108, 13, 0.97);
 }
+
+#rulesText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+
+#enter, #chooseCharacter {
+  text-align: center;
+  font-size: 24px;
+}
+
+#wizardCharacter, #warriorCharacter {
+  width: 200px;
+  height: 300px;
+}
+
+#characterSelection {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+.characterImage {
+  cursor: pointer;
+  display: table-column;
+  justify-content: space-between;
+}
+
+#wizardImage {
+  background-color: rgba(137, 43, 226, 0.735);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+#warriorImage {
+  background-color: rgba(255, 0, 0, 0.464);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+#vs {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, +50%);
+  font-size: 90px;
+  color: goldenrod;
+  font-style: italic;
+  text-shadow: 5px 5px 15px #000000;
+}
+
+.characterImage p {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+#characterSelection {
+  display: none;
+}
+
+#chooseCharacter {
+  display: none;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  text-shadow: 3px 3px 10px #e2b8b8;
+}
+
+#enter {
+  font-family: crimson, sans-serif;
+  justify-content: center;
+  color: rgb(246, 245, 249);
+  text-shadow: 5px 5px 10px rgba(137, 43, 226, 0.735);
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, +200%); 
+  text-align: center; 
+  font-size: 300%;
+  cursor:pointer; 
+}
+
+#pseudo {
+  display: none;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  text-shadow: 5px 5px 15px #e2b8b8;
+}
+
+#welcomeContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlayText {
+  position: absolute;
+  text-align: center;
+  color: whitesmoke;
+  text-decoration:overline;
+  text-shadow: 3px 3px 16px rgba(137, 43, 226, 0.735);
+}
+
+#enter {
+  top: 50%;
+}
+
+#welcomeImg {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.5);
+}
+
