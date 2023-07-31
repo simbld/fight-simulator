@@ -6,7 +6,18 @@ html, body {
   justify-content: center;
   align-items: center;
   background-color: rgb(19, 91, 116);
+  background-image: linear-gradient(rgba(137, 43, 226, 0.735), rgba(255, 0, 0, 0.464));
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'crimson';
+  src: url('fonts/Midnight\ crimson.ttf');
+}
+
+@font-face {
+  font-family: 'pirate one';
+  src: url('fonts/PirataOne-Regular.ttf');
 }
 
 button {
@@ -18,10 +29,11 @@ button {
   font-size: 20px;
   cursor: pointer;
   border-radius: 20px;
-  position: fixed;  
-  bottom: 10px;   
-  left: 50%;   
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
   transform: translateX(-50%);
+  z-index: 1; /* Ajoutez cette ligne */
 }
 
 #rulesContainer {
@@ -33,19 +45,32 @@ button {
 
 #rules {
   display: none;
-  background: burlywood;
+  justify-content: center;
+  align-items: center;
+  font-family: 'pirate one';
+  font-size: 20px;
+  background-image: url(img/papyrus.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
   position: fixed;
-  bottom: 10%; 
-  left: 50%;
-  transform: translate(-50%);
-  width: 70%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   text-align: center;
-  padding: 20px;
-  opacity: 70%;
-  border-radius: 20px;
-  text-shadow: 1px 1px 5px rgba(126, 67, 67, 0.611);
-  box-shadow: 3px 3px 10px #531919;
+  padding: 10px;
+  text-shadow: 1px 1px 5px rgba(241, 108, 13, 0.97);
 }
+
+#rulesText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
 
 #enter, #chooseCharacter {
   text-align: center;
@@ -55,16 +80,6 @@ button {
 #wizardCharacter, #warriorCharacter {
   width: 200px;
   height: 300px;
-}
-
-#enter {
-  cursor:pointer; 
-  position: fixed; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
-  text-align: center; 
-  font-size: 24px;
 }
 
 #characterSelection {
@@ -125,11 +140,17 @@ button {
 }
 
 #enter {
-  display: flex;
+  font-family: crimson, sans-serif;
   justify-content: center;
   color: rgb(246, 245, 249);
-  font-size: 8vh;
-  text-shadow: 3px 3px 6px #83f170d6;
+  text-shadow: 5px 5px 10px rgba(137, 43, 226, 0.735);
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, +200%); 
+  text-align: center; 
+  font-size: 300%;
+  cursor:pointer; 
 }
 
 #pseudo {
@@ -137,23 +158,31 @@ button {
   justify-content: center;
   color: white;
   font-size: 30px;
-  text-shadow: 3px 3px 10px #e2b8b8;
+  text-shadow: 5px 5px 15px #e2b8b8;
 }
 
-#welcome {
-  display: grid;
-  columns: auto;
+#welcomeContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlayText {
+  position: absolute;
   text-align: center;
-  margin-bottom: 4rem;
-  color: rgb(207, 212, 61);
-  font-size: 60px;
-  text-shadow: 3px 3px 6px #b2e1aad6;
+  color: whitesmoke;
+  text-decoration:overline;
+  text-shadow: 3px 3px 16px rgba(137, 43, 226, 0.735);
+}
+
+#enter {
+  top: 50%;
 }
 
 #welcomeImg {
-display: flex;
-justify-content: center;
-padding: 17px;
-width: 90vh;
-height: 70vh;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.5);
 }
